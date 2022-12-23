@@ -15,8 +15,8 @@ e.g. -> Technology
 
 ## It also fetches news from topics you want to read. 
 
-![Screenshot (67)](https://user-images.githubusercontent.com/106004070/209361899-6c8bcff2-a36f-4ebe-
-89cb-221d396c8985.png)
+![Screenshot (67)](https://user-images.githubusercontent.com/106004070/209362376-f1e01d37-6919-401b-b2a5-d49e0ed6845d.png)
+
 
 ![Screenshot (68)](https://user-images.githubusercontent.com/106004070/209361938-2c386089-29d3-49ca-9090-2bce83e40b52.png)
 
