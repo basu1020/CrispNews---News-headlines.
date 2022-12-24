@@ -11,7 +11,7 @@ export default function News(props) {
     const [date] = useState(new Date())
 
     const update = async () => {
-        let API = `https://newsapi.org/v2/top-headlines?country=in&category=${props.category}&from=${date.getFullYear()}-${date.getMonth()}-${date.getDate()}&apiKey=${props.apiKey}&pageSize=20&page=`
+        let API = `https://newsapi.org/v2/everything?&qInTitle=${props.input}&from=${date.getFullYear()}-${date.getMonth()}-${date.getDate()}&apiKey=${props.apiKey}&pageSize=20&page=`
         let url = `${API}${page}`
         console.log(url)
         // console.log(url)
@@ -23,12 +23,7 @@ export default function News(props) {
     }
 
     useEffect(() => {
-        // document.title = `${props.parameter.charAt(0).toUpperCase() + props.parameter.slice(1)} - CrispNews`
         update()
-        // console.log(props.category)
-        // console.log(props.apiKey)
-        // console.log(props.category)
-        //  eslint-disable-next-line
     }, [])
 
     const fetchMore = async () => {
@@ -42,7 +37,6 @@ export default function News(props) {
             setTotalResults(parsedData.totalResults)
             sethasmore(true)
         }
-
     }
 
     return (

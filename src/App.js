@@ -2,9 +2,11 @@
 import './App.css';
 import { useState } from 'react';
 import Navbar from './components/Navbar';
+import SearchedNews from './components/SearchedNews'
 import News from './components/News';
 import {
   BrowserRouter as Router,
+  HashRouter,
   Routes,
   Route
 } from "react-router-dom";
@@ -23,28 +25,29 @@ function App() {
 
   return (
     <div>
-      <Router>
-        <Navbar SearchFunction={Search} style={{ position: "sticky" }} />
+      <HashRouter>
+        <Navbar SearchFunction={Search} style={{ position: "sticky" }}/>
         <Routes>
           
-          <Route exact path="/" element={<News key="general" api={`https://newsapi.org/v2/top-headlines?country=in&category=general&from=${date.getFullYear()}-${date.getMonth()}-${date.getDate()}&apiKey=${apikey}&pageSize=20&page=`} />}></Route>
+          <Route exact path="/" element={<News key="general" apiKey={apikey} category = {"general"} />}></Route>
 
-          <Route exact path="/business" element={<News key="business" api={`https://newsapi.org/v2/top-headlines?country=in&category=business&from=${date.getFullYear()}-${date.getMonth()}-${date.getDate()}&apiKey=${apikey}&pageSize=20&page=`} />}></Route>
+          <Route exact path="/business" element={<News key="business"  category ={"business"} apiKey={apikey} />}></Route>
 
-          <Route exact path="/sports" element={<News key="sports" api={`https://newsapi.org/v2/top-headlines?country=in&category=sports&from=${date.getFullYear()}-${date.getMonth()}-${date.getDate()}&apiKey=${apikey}&pageSize=20&page=`} />}></Route>
+          <Route exact path="/sports" element={<News key="sports"  category ={"sports"} apiKey={apikey} />}></Route>
 
-          <Route exact path="/science" element={<News key="science" api={`https://newsapi.org/v2/top-headlines?country=in&category=science&from=${date.getFullYear()}-${date.getMonth()}-${date.getDate()}&apiKey=${apikey}&pageSize=20&page=`} />}></Route>
+          <Route exact path="/science" element={<News key="science" category={"science"} apiKey={apikey} />}></Route>
 
-          <Route exact path="/technology" element={<News key="technology" api={`https://newsapi.org/v2/top-headlines?country=in&category=technology&from=${date.getFullYear()}-${date.getMonth()}-${date.getDate()}&apiKey=${apikey}&pageSize=20&page=`} />}></Route>
+          <Route exact path="/technology" element={<News key="technology" category={"technology"} apiKey={apikey} />}></Route>
 
-          <Route exact path="/entertainment" element={<News key="entertainment" api={`https://newsapi.org/v2/top-headlines?country=in&category=entertainment&from=${date.getFullYear()}-${date.getMonth()}-${date.getDate()}&apiKey=${apikey}&pageSize=20&page=`} />}></Route>
+          <Route exact path="/entertainment" element={<News key="entertainment" category={"entertainment"} apiKey={apikey} />}></Route>
 
-          <Route exact path="/search" element={<News key={input} api={`https://newsapi.org/v2/everything?&qInTitle=${input}&from=${date.getFullYear()}-${date.getMonth()}-${date.getDate()}&apiKey=${apikey}&pageSize=20&page=`} />}></Route>
+          <Route exact path="/search" element={<SearchedNews key={input} input={input} apiKey={apikey} />}></Route>
 
         </Routes>
-      </Router>
+      </HashRouter>
     </div>
   )
 }
 
 export default App;
+

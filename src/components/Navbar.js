@@ -34,7 +34,7 @@ export default function Navbar(props) {
                         <form className="d-flex">
                             <input className="form-control me-2" id="ThisIsInput" type="search" placeholder="Search" aria-label="Search" />
                             <Link to="/search">
-                                <button className="btn btn-outline-success" onClick={props.SearchFunction} >Search</button>
+                                <button className="btn btn-outline-success" onClick={props.SearchFunction}>Search</button>
                             </Link>
                         </form>
                     </div>
